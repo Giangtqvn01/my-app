@@ -1,8 +1,18 @@
-node{
-    stage('SCM checkout'){
-        git 'https://github.com/Giangtqvn01/my-app'
+pipeline{
+    agent any
+    tools{
+        maven 'Maven'
     }
-    stage('Compile-package'){
-        sh 'mvn package'
+    stages{
+        stage("SCM Checkout"){
+            steps{
+            git 'https://github.com/samben01/KarateWithJenkins.git'
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh 'mvn clean package'
+            }
+        }
     }
 }
