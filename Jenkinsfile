@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    tools{
-        maven 'Maven'
-    }
     stages{
         stage("SCM Checkout"){
             steps{
@@ -11,7 +8,7 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
-                sh 'mvn clean package'
+                sh 'mvn clean install --settings C:\\Users\\giangnt123\\.m2\\settings.xml -DskipTests'
             }
         }
     }
