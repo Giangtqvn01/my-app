@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage("SCM Checkout"){
             steps{
-            git 'https://github.com/samben01/KarateWithJenkins.git'
+            git 'https://github.com/Giangtqvn01/my-app'
             }
         }
         stage("Maven Build"){
